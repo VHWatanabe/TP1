@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CalculoIMC</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: CalculoIMC (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CalculoIMC</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    40%
+  </span>
+  <span class="absValue">
+    (2/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    65,4%
+  </span>
+  <span class="absValue">
+    (17/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    41,9%
+  </span>
+  <span class="absValue">
+    (13/31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import java.util.Scanner;
+&nbsp;
+<b class="nc">&nbsp;public class CalculoIMC {</b>
+&nbsp;    public static String classificarIMC(double imc) {
+<b class="fc">&nbsp;        if (imc &lt; 16.0) {</b>
+<b class="fc">&nbsp;            return &quot;Magreza grave&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 16.0 &amp;&amp; imc &lt; 17.0) {</b>
+<b class="fc">&nbsp;            return &quot;Magreza moderada&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 17.0 &amp;&amp; imc &lt; 18.5) {</b>
+<b class="nc">&nbsp;            return &quot;Magreza leve&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 18.5 &amp;&amp; imc &lt; 25.0) {</b>
+<b class="fc">&nbsp;            return &quot;Saudável&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 25.0 &amp;&amp; imc &lt; 30.0) {</b>
+<b class="fc">&nbsp;            return &quot;Sobrepeso&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 30.0 &amp;&amp; imc &lt; 35.0) {</b>
+<b class="nc">&nbsp;            return &quot;Obesidade Grau I&quot;;</b>
+<b class="pc">&nbsp;        } else if (imc &gt;= 35.0 &amp;&amp; imc &lt; 40.0) {</b>
+<b class="nc">&nbsp;            return &quot;Obesidade Grau II&quot;;</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            return &quot;Obesidade Grau III&quot;;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public static double calcularPeso(double peso, double altura) {
+<b class="fc">&nbsp;        return peso / (altura * altura);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static void programaIMC(String versao) {
+&nbsp;        double peso, altura, imc;
+<b class="nc">&nbsp;        Scanner pScan = new Scanner(System.in);</b>
+<b class="nc">&nbsp;        Scanner aScan = new Scanner(System.in);</b>
+&nbsp;
+<b class="nc">&nbsp;        System.out.println(&quot;===========================&quot;);</b>
+<b class="nc">&nbsp;        System.out.printf(&quot;Cálculo do IMC - Versão %s\n&quot;, versao);</b>
+<b class="nc">&nbsp;        System.out.println(&quot;===========================&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        System.out.print(&quot;Insira o seu peso em quilogramas: &quot;);</b>
+<b class="nc">&nbsp;        peso = Double.parseDouble(pScan.nextLine());</b>
+&nbsp;
+<b class="nc">&nbsp;        System.out.print(&quot;Insira o sua altura em metros: &quot;);</b>
+<b class="nc">&nbsp;        altura = Double.parseDouble(aScan.nextLine());</b>
+&nbsp;
+<b class="nc">&nbsp;        imc = calcularPeso(peso, altura);</b>
+&nbsp;
+<b class="nc">&nbsp;        System.out.printf(&quot;\nSeu índice de massa corporal é: %.2f kg/m²\n&quot;, imc);</b>
+<b class="nc">&nbsp;        System.out.printf(&quot;Classificação: %s.\n&quot;, classificarIMC(imc));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static void main(String[] args) {
+<b class="nc">&nbsp;        String versao = &quot;1.0&quot;;</b>
+<b class="nc">&nbsp;        programaIMC(versao);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-02-17 22:45</div>
+</div>
+</body>
+</html>
